@@ -1,9 +1,8 @@
-<h1 class="text-3xl font-bold underline text-orange-500">
-  Hello world!
-</h1>
+<h1 class="text-4xl text-blue-500 dark:text-indigo-200">Hello world!</h1>
+<ThemeToggle />
 
-<style lang="postcss">
-  :global(html) {
-    background-color: theme(colors.gray.100);
-  }
-</style>
+<script lang="ts">
+	import ThemeToggle from '$lib/components/buttons/ThemeToggleButton.svelte'
+</script>
+
+<style></style>
