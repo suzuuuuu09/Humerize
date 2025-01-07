@@ -25,10 +25,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { sidebarStore } from "$lib/stores/sidebar";
-	import Icon from "$lib/components/icons/Icon.svelte";
 
-  let isOpen = false;
-  let isMobileWidth = false;
   onMount(() => {
     const checkWidth = () => {
       const isMobile = window.innerWidth < 768;

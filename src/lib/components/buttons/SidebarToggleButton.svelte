@@ -1,13 +1,9 @@
 <button
   on:click={toggleSidebar}
-  class="fixed top-4 z-50 p-2 rounded-md bg-gray-800 text-white ease-in-out duration-300 transition-all
-  {$sidebarStore.isOpen ? ($sidebarStore.isMobileWidth ? "left-64" : "-left-32") : "left-4"}"
+  class="fixed p-2 rounded-md bg-gray-800 text-white ease-in-out duration-300 transition-all bg-opacity-90
+  {$sidebarStore.isMobileWidth ? "left-4" : "-left-32"}"
 >
-  {#if $sidebarStore.isOpen}
-    <Icon icon="mdi:close" className="h-6 w-6" />
-  {:else}
-    <Icon icon="mdi:hamburger-menu" className="h-6 w-6" />
-  {/if}
+  <Icon icon="{$sidebarStore.isOpen ? "mdi:close" : "mdi:hamburger-menu"}" className="h-6 w-6" />
 </button>
 
 <script lang="ts">
