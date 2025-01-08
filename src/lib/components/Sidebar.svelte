@@ -1,9 +1,15 @@
 <div class="relative">
   <div
-    class="fixed top-0 left-0 h-full bg-white dark:bg-slate-800 transition-all duration-300 ease-in-out {$sidebarStore.isOpen ? 'w-64' : 'w-0'}"
+    class="fixed top-0 left-0 h-full bg-white dark:bg-slate-800 transition-all duration-300 ease-in-out
+    {$sidebarStore.isOpen ? 'w-64' : 'w-0'}
+    {isInitialLoad ? '' : ''}"
   >
     <!-- SidebarContent -->
-    <div class="p-4 transition-all duration-300 w-64 {$sidebarStore.isOpen ? 'translate-x-0' : '-translate-x-full'}">
+    <div
+      class="p-4 w-64
+      {$sidebarStore.isOpen ? 'translate-x-0' : '-translate-x-full'}
+      {isInitialLoad ? '' : 'transition-all duration-300'}
+    ">
       <h2 class="text-xl font-bold mb-4">Sidebar</h2>
       <nav>
         <ul class="space-y-2">
@@ -26,6 +32,8 @@
   import { onMount } from "svelte";
   import { sidebarStore } from "$lib/stores/sidebar";
 
+  let isInitialLoad = true;
+
   onMount(() => {
     const checkWidth = () => {
       const isMobile = window.innerWidth < 768;
@@ -37,6 +45,11 @@
     };
 
     checkWidth();
+
+    setTimeout(() => {
+      isInitialLoad = false;
+    }, 0);
+
     window.addEventListener("resize", checkWidth);
     return () => window.removeEventListener("resize", checkWidth);
   });
