@@ -1,5 +1,5 @@
 <script lang="ts">
-  import anime from 'animejs';
+  import anime from 'animejs'
 
   let box: HTMLElement;
 

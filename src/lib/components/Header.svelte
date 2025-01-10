@@ -4,8 +4,9 @@
   import SidebarToggleButton from "$lib/components/buttons/SidebarToggleButton.svelte";
 </script>
 
-<header class="fixed top-0 left-0 right-0 h-16 bg-white dark:bg-slate-800 duration-300 shadow-md z-50 px-4">
+<header class="fixed top-0 left-0 right-0 h-16 duration-300 shadow-md z-50">
   <div class="h-full flex items-center justify-between">
+    <!-- SidebarContent -->
     <div class="flex items-center gap-2 scale-110 pl-2">
       <!-- RightContent -->
       <SidebarToggleButton />
